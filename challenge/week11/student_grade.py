@@ -1,9 +1,11 @@
 # Student 클래스 생성
 class Student:
-    name = ''
-    korean = 0
-    math = 0
-    eng = 0
+    # 생성자 작성 - 이름, 국어, 수학, 영어 입력받아 초기화함
+    def __init__(self, name, korean, math, eng):
+        self.name = name
+        self.korean = korean
+        self.math = math
+        self.eng = eng
     
     # 평균을 구하는 메서드 생성
     def get_average(self):
@@ -25,11 +27,7 @@ def loadData(filename):
         math = float(token[2]) # 수학 점수 저장
         eng = float(token[3]) # 영어 점수 저장
 
-        std_ins = Student() # 클래스 사용
-        std_ins.name = name
-        std_ins.korean = korean
-        std_ins.math = math
-        std_ins.eng = eng
+        std_ins = Student(name, korean, math, eng) # 클래스 사용
 
         score_dict[name] = std_ins  # 이름을 key로, Student 객체를 value로 저장
 
